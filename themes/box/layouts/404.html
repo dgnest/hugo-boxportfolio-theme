@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{ partial "head.html" . }}
+
+<body>
+    {{ partial "nav.html" . }}
+    <div class="container main-container">
+        <div class="col-md-3"> </div>
+        <div class="col-md-6" id="error-page">
+            <a href="index.html">
+                <img src="img/404.png" class="img-responsive" alt="">
+            </a>
+            <div class="center">
+              <h3>We are sorry - Page not found</h3>
+              <p class="buttons"><a href="index.html" class="btn btn-template-main"><i class="fa fa-home"></i> Go to Homepage</a>
+            </div>
+            </p>
+        </div>
+        <div class="col-md-3"> </div>
+    </div>
+
+    {{ partial "footer.html" . }}
+
+</body>
+
+</html>

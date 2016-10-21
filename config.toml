@@ -1,0 +1,18 @@
+baseurl = "http://jparedes"
+languageCode = "en-us"
+title = "Jorge Paredes"
+theme = "box"
+paginate = 10
+# SectionPagesMenu = "main"
+
+[[menu.main]]
+  name = "home"
+  weight = 1
+  url  = "/"
+
+[[menu.main]]
+  name = "blog"
+  url  = "/post/"
+  weight = 5
+
+  # identifier = "innovation"

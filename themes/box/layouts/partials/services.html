@@ -1,0 +1,19 @@
+<div class="top-bar">
+    <h1>Services</h1>
+    <p><a href="#">Home</a> / Services</p>
+</div>
+
+<div class="container main-container">
+    <div class="clearfix">
+        {{ range .Site.Data.services}}
+        <!-- service-box -->
+        <div class="col-md-4 service-box">
+            <i class="{{.icon}} size-50"></i>
+            <h3>{{.name}}</h3>
+            <div class="h-10"></div>
+            <p>{{.description}} </p>
+        </div>
+        <!-- end service-box -->
+        {{ end }}
+    </div>
+</div>

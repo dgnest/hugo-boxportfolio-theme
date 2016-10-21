@@ -1,0 +1,50 @@
+<div class="top-bar">
+    <h1>portfolio</h1>
+    <p><a href="#">Home</a> / Portfolio</p>
+</div>
+
+<div class="main-container portfolio-inner clearfix">
+    <!-- portfolio div -->
+    <div class="portfolio-div">
+        <div class="portfolio">
+            <!-- portfolio_filter -->
+            <div class="categories-grid wow fadeInLeft">
+                <nav class="categories text-center">
+                    <ul class="portfolio_filter">
+                        <li><a href="" class="active" data-filter="*">All</a></li>
+                        <li><a href="" data-filter=".photography">Photography</a></li>
+                        <li><a href="" data-filter=".logo">Logo</a></li>
+                        <li><a href="" data-filter=".graphics">Graphics</a></li>
+                        <li><a href="" data-filter=".ads">Advertising</a></li>
+                        <li><a href="" data-filter=".fashion">Fashion</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- portfolio_filter -->
+
+            <!-- portfolio_container -->
+            <div class="no-padding portfolio_container clearfix">
+                {{ range .Site.Data.portfolio}}
+                <!-- single work -->
+                <div class="col-md-4 col-sm-6 {{ substr (printf "%s" .categories) 1 -1 }}">
+                    <a href="#" class="portfolio_item">
+                        <img src="http://placehold.it/1000x1000" alt="image" class="img-responsive" />
+                        <div class="portfolio_item_hover">
+                            <div class="portfolio-border clearfix">
+                                <div class="item_info">
+                                    <span>{{ .title }}</span>
+                                    <em>{{ substr (printf "%s" .categories) 1 -1 }}</em>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- end single work -->
+                {{ end }}
+            </div>
+            <!-- end portfolio_container -->
+        </div>
+        <!-- portfolio -->
+    </div>
+    <!-- end portfolio div -->
+</div>

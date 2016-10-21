@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{ partial "head.html" . }}
+
+<body>
+    {{ partial "nav.html" . }}
+    {{ partial "intro.html" . }}
+
+    <!-- portfolio div -->
+    <div class="portfolio-div">
+        <div class="portfolio">
+            <div class="no-padding portfolio_container">
+                {{ range .Site.Data.portfolio}}
+                <!-- single work -->
+                <div class="col-md-{{ div .colwidth 2 }} col-sm-{{ .colwidth }} {{ substr (printf "%s" .categories) 1 -1 }}">
+                  <a href="#" class="portfolio_item">
+                      <img src="{{ .Site.BaseURL }}img/portfolio/{{ .image }}" alt="{{ .title }}" class="img-responsive" />
+                      <div class="portfolio_item_hover">
+                          <div class="portfolio-border clearfix">
+                              <div class="item_info">
+                                  <span>{{.title}}</span>
+                                  <em>{{ substr (printf "%s" .categories) 1 -1 }}</em> <!-- Fashion / Logo -->
+                              </div>
+                          </div>
+                      </div>
+                  </a>
+                </div>
+                <!-- end single work -->
+                {{ end }}
+            </div>
+            <!-- end portfolio_container -->
+        </div>
+        <!-- portfolio -->
+    </div>
+    <!-- end portfolio div -->
+
+    {{ partial "footer.html" . }}
+    {{ partial "returntop.html" . }}
+
+</body>
+
+</html>

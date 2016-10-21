@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{ partial "head.html" . }}
+
+<body>
+    <div class="container-fluid">
+       <!-- box-header -->
+        <header class="box-header">
+            <div class="box-logo">
+                <a href="index.html"><img src="{{ .Site.BaseURL }}img/logo.png" width="80" alt="Logo"></a>
+            </div>
+            <!-- box-nav -->
+            <a class="box-primary-nav-trigger" href="#0">
+                <span class="box-menu-text">Menu</span><span class="box-menu-icon"></span>
+            </a>
+            <!-- box-primary-nav-trigger -->
+        </header>
+        <!-- end box-header -->
+      {{ partial "nav.html" . }}
+    </div>
+
+    <!-- main-container -->
+    <div class="container main-container">
+        <div class="col-md-12">
+            <img src="http://placehold.it/1920x600" alt="" class="img-responsive" />
+            <div class="h-30"></div>
+        </div>
+        <div class="col-md-12">
+            <h3 class="text-uppercase">{{ .Title }}</h3>
+            <h5>subtitulo</h5>
+            <div class="h-30"></div>
+        </div>
+        <div class="col-md-9">
+            {{ .Content }}
+        </div>
+        <div class="col-md-3">
+            <ul class="cat-ul">
+                {{ range .Params.tags }}
+                <li><i class="ion-ios-circle-filled"></i><a href="{{ $.Site.BaseURL }}tags/{{ . | urlize | lower }}">{{ . }}</a> </li>
+                {{ end }}
+            </ul>
+
+            <div class="h-10"></div>
+            <h4>Share</h4>
+            <ul class="social-ul">
+                <li class="box-social"><a href="#0"><i class="ion-social-facebook"></i></a></li>
+                <li class="box-social"><a href="#0"><i class="ion-social-instagram-outline"></i></a></li>
+                <li class="box-social"><a href="https://twitter.com/share"><i class="ion-social-twitter"></i></a></li>
+                <li class="box-social"><a href="#0"><i class="ion-social-dribbble"></i></a></li>
+            </ul>
+
+            {{ partial "widgets/categories.html" . }}
+            {{ partial "widgets/tags.html" . }}
+        </div>
+    </div>
+    <!-- end main-container -->
+    {{ partial "returntop.html" . }}
+</body>
